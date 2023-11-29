@@ -1,0 +1,11 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.secu.jwt.mapper.RoleInfoMapper">
+	<select id="selectRoleInfosByLiNum" resultType="com.secu.jwt.vo.RoleInfoVO">
+		SELECT * FROM LOGIN_ROLE_MAP LRM 
+		INNER JOIN ROLE_INFO RI ON RI.RI_NUM = LRM.RI_NUM
+		WHERE LI_NUM=#{liNum}
+	</select>
+</mapper>
+
+
